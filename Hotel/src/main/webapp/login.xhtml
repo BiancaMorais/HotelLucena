@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+      
+    <h:head>
+        <title>HOTEL LUCENA</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="160" resizable="true" closable="true" collapsible="true">    
+                <img src="resources/images/cesjf.png" alt="" />
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="center">
+                    <h:form id="formLogin">
+                        <p:panel style="text-align: center; width: 800px; margin: auto; margin-top: 80px;">
+                            <p:graphicImage value="/resources/images/logo.png"/>
+                            <f:facet name="header">HOTEL LUCENA</f:facet>
+                            <h:panelGrid columns="1" width="100%">
+                                <p style="margin: 0; font-weight: bold;">Login</p>
+                                <span class="ui-float-label">
+                                    <p:inputText id="txtLogin" value="#{usuariosBean.usuarios.email}" />
+                                </span>
+                                <p style="margin: 0; font-weight: bold;">Senha</p>
+                                <p:password id="txtSenha" value="#{usuariosBean.usuarios.senha}" label="Senha" required="true" />
+                               
+                                
+                            </h:panelGrid>
+                            <p:commandButton value="Login" action="#{usuariosBean.login()}" ajax="false"/>
+                        </p:panel>
+                    </h:form>
+                
+                
+            </p:layoutUnit> 
+        </p:layout>
+    </h:body>
+</html>
