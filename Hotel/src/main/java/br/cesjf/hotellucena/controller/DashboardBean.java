@@ -23,7 +23,7 @@ import org.primefaces.model.charts.optionconfig.title.Title;
 
 /**
  *
- * @author terra
+ * @author bibim
  */
 @Named
 @ManagedBean
