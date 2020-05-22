@@ -43,16 +43,7 @@ public class DashboardBean implements Serializable{
     
     
     private void createPieModel() {
-        pieModel = new PieChartModel();
-          
-        pieModel.set("Carro", 1000);
-        pieModel.set("Ônibus", 600);
-        pieModel.set("Metrô", 1500);
-        pieModel.set("Trem", 700);
-        pieModel.set("Bicicleta", 100);
-          
-        pieModel.setTitle("Meio de Transporte");
-        pieModel.setLegendPosition("w");
+        reservas = new PieChartModel();
     }
     
 }
