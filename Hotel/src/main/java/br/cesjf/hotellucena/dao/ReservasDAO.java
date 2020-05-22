@@ -60,6 +60,13 @@ public class ReservasDAO {
         query.setParameter("hoje", hoje);
         return query.getResultList();
     }
+    
+    public List<Reservas> buscarConcluidos() {
+        Date hoje = new Date();
+        EntityManager em = PersistenceUtil.getEntityManager();
+        Query query = em.createQuery("from Reservas As a where a.status = 'Concluído'");
+        return query.getResultList();
+    }
 
     public void remover(Reservas reserva) {
         EntityManager em = PersistenceUtil.getEntityManager();

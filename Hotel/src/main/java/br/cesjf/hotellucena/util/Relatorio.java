@@ -74,7 +74,7 @@ public class Relatorio {
     public Connection getConexao(){        
         try {            
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotellucena", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/hotellucena", "root", "");
             return con;
             
         } catch (SQLException | ClassNotFoundException ex) {
