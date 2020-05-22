@@ -36,7 +36,7 @@ public class DashboardBean implements Serializable{
     private BarChartModel reservasConcluidas;
     
     public DashboardBean(){
-        reservas = new ReservasDAO().buscarAtivos();
+        reservas = new ReservasDAO().buscarReservados();
         reservascheckout = new ReservasDAO().buscarConcluidos();
     }
     
