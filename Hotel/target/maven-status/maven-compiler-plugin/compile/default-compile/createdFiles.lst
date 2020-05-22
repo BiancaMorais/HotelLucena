@@ -6,6 +6,7 @@ br\cesjf\hotellucena\converter\CategoriaConverter.class
 br\cesjf\hotellucena\controller\ReservasBean.class
 br\cesjf\hotellucena\util\PersistenceUtil.class
 br\cesjf\hotellucena\model\Apartamento_.class
+br\cesjf\hotellucena\util\Relatorio.class
 br\cesjf\hotellucena\controller\ItemBean.class
 br\cesjf\hotellucena\controller\CategoriaBean.class
 br\cesjf\hotellucena\model\Categoria.class

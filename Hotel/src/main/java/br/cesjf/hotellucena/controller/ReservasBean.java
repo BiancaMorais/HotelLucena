@@ -7,6 +7,7 @@ package br.cesjf.hotellucena.controller;
 
 import br.cesjf.hotellucena.dao.ReservasDAO;
 import br.cesjf.hotellucena.model.Reservas;
+import br.cesjf.hotellucena.util.Relatorio;
 import java.util.ArrayList;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
@@ -17,7 +18,9 @@ import com.lowagie.text.DocumentException;
 import com.lowagie.text.PageSize;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -41,11 +44,20 @@ public class ReservasBean {
     Reservas reserva = new Reservas();
 
     List reservas = new ArrayList();
+    
+    private String relatorio;
+    
+    private Map<String, String> relat;
 
     //construtor
     public ReservasBean() {
         reservas = new ReservasDAO().buscarAtivos();
         reserva = new Reservas();
+        
+        relat = new HashMap<>();
+        relat.put("Relatório de Quartos Reservados", "QuartosReservados");
+        relat.put("Relatório de Quartos Ocupados", "QuartosOcupados");
+        relat.put("Relatório de Reservas Concluidas", "ReservasConcluidas");
     }
 
     //Métodos dos botões 
@@ -147,5 +159,26 @@ public class ReservasBean {
         reservas = (List) new ReservasDAO().buscarReservasApartamento(id);
         return reservas;
     }
+    
+    public String getRelatorio() {
+        return relatorio;
+    }
 
+    public void setRelatorio(String relatorio) {
+        this.relatorio = relatorio;
+    }
+
+    public Map<String, String> getRelat() {
+        return relat;
+    }
+
+    public void setRelat(Map<String, String> relat) {
+        this.relat = relat;
+    }
+    
+    public void gerarRelatorio() {
+        Relatorio rel = new Relatorio();
+        rel.getRelatorio(this.relatorio);
+    }
+    
 }

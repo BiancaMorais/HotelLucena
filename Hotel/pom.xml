@@ -14,11 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.faces</artifactId>
-            <version>2.2.7</version>
-        </dependency>
+        
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.core</artifactId>
@@ -63,7 +59,7 @@
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.8.0</version>
+            <version>6.10.0</version>
             <type>jar</type>
             <exclusions>
                 <exclusion>
@@ -133,6 +129,17 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-fonts</artifactId>
+            <version>6.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.omnifaces</groupId>
+            <artifactId>omnifaces</artifactId>
+            <version>3.4</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -188,6 +195,11 @@
                 </executions>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
     <repositories>
         <repository>

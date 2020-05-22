@@ -1,0 +1,26 @@
+<ui:composition template="/WEB-INF/templates/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+        <h2 class="page-header">Relatórios</h2>
+        <br/>
+        <center>
+            <p:layoutUnit position="center">
+                <h:form id="relatorio">
+                    <h:panelGrid id="pnlgrdCenter3" columns="1">
+                        
+                        <p:selectOneMenu id="Relat" value="#{reservasBean.relatorio}" required="true">
+                            <f:selectItems value="#{reservasBean.relat}"/>
+                        </p:selectOneMenu>
+                        
+                        <p:commandButton id="Relatorio" ajax="false" value="Gerar Relatório" action="#{reservasBean.gerarRelatorio()}" onclick="this.form.target = '_blank'" />
+                        
+                    </h:panelGrid>
+                </h:form>
+            </p:layoutUnit>
+        </center>
+    </ui:define>
+</ui:composition>
